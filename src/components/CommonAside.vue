@@ -72,24 +72,6 @@ export default {
               name: 'encryptionAndDecryption',
               label: '数据加解密',
               icon: 's-promotion'
-            },
-            {
-              path: '/coreLibrary',
-              name: 'coreLibrary',
-              label: '核心库位置',
-              icon: 's-promotion'
-            },
-            {
-              path: '/coreCustomers',
-              name: 'coreCustomers',
-              label: '核心客户',
-              icon: 's-promotion'
-            },
-            {
-              path: '/casePush',
-              name: 'casePush',
-              label: '案件推送',
-              icon: 's-promotion'
             }
           ]
         },
@@ -118,20 +100,8 @@ export default {
             {
               path: '/serverManagement',
               name: 'serverManagement',
-              label: '服务器管理',
+              label: '接口管理',
               icon: 'service'
-            }
-          ]
-        },
-        {
-          label: '游戏相关',
-          icon: 'cpu',
-          children: [
-            {
-              path: '/animal',
-              name: 'animal',
-              label: '岛民小动物',
-              icon: 'ship'
             }
           ]
         }

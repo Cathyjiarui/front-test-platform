@@ -1,4 +1,8 @@
+/**
+ * 获取相关数据方法整合
+ */
 import axios from './config'
+import {toKey} from "core-js/internals/reflect-metadata";
 
 /**
  * 登录接口
@@ -240,3 +244,27 @@ export const getAnimalListApi = (current, size, disposition) => axios.get('/api/
         disposition: disposition
     }
 })
+
+/**
+ * 获取测试状态
+ * @param token
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+export const testSituation = (token) => axios.get('/api/v1/pri/story/testSituation',
+    {
+        headers:{
+            token
+        }
+    })
+
+/**
+ * 获取年内每月数据
+ * @param token
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+export const annualReport = (token) => axios.get('/api/v1/pri/story/annualReport',
+    {
+        headers:{
+            token
+        }
+    })

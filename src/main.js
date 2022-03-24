@@ -12,10 +12,12 @@ import './mock'
 //第三方包
 import ElementUI from 'element-ui'
 import qs from 'qs'
+import echarts from 'echarts'
 
 Vue.use(ElementUI)
 Vue.prototype.$http = http
 Vue.prototype.$qs = qs
+Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 
