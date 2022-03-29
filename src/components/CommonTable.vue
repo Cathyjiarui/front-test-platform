@@ -14,9 +14,11 @@
       </el-table-column>
       <el-table-column label="操作" fixed="right" :width="rightWidth">
         <template slot-scope="scope">
+          <!--用户界面按钮-->
           <el-button size="mini" @click="userEdit(scope.row)" v-show="scope.row.type === 'user'">编辑</el-button>
           <el-button size="mini" type="danger" @click="userDelete(scope.row)" v-show="scope.row.type === 'user'">删除
           </el-button>
+          <!--测试任务界面按钮-->
           <el-button size="mini" type="success" @click="testReceive(scope.row)" plain
                      v-show="scope.row.type === 'test' && scope.row.receive === 0 && scope.row.test_over === 0">领取
           </el-button>
@@ -38,7 +40,17 @@
           <el-button size="mini" type="info" @click="testGitAddress(scope.row)" plain
                      v-show="scope.row.type === 'test'">Git地址
           </el-button>
-          <el-button size="mini" type="success" @click="animalImage(scope.row)" v-show="scope.row.type === 'animal'">形象</el-button>
+          <!--小动物形象界面-->
+          <el-button size="mini" type="success" @click="animalImage(scope.row)" v-show="scope.row.type === 'animal'">
+            形象
+          </el-button>
+          <!--api界面-->
+          <el-button size="mini" type="primary" @click="apiEdit(scope.row)" v-show="scope.row.type === 'api'">编辑
+          </el-button>
+          <el-button size="mini" type="danger" @click="apiDelete(scope.row)" v-show="scope.row.type === 'api'">删除
+          </el-button>
+          <el-button size="mini" type="success" @click="apiTest(scope.row)" v-show="scope.row.type === 'api'">测试
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -66,7 +78,6 @@ export default {
       this.$emit('del', row)
     },
     tableRowClassName(row) {
-      // console.log(row.row.is_important)
       if (row.row.is_important) {
         return 'warning-row'
       }
@@ -96,8 +107,17 @@ export default {
     changePage(page) {
       this.$emit('changePage', page)
     },
-    animalImage(row){
-      this.$emit('animalImage',row)
+    animalImage(row) {
+      this.$emit('animalImage', row)
+    },
+    apiEdit(row) {
+      this.$emit('apiEdit', row)
+    },
+    apiDelete(row) {
+      this.$emit('apiDelete', row)
+    },
+    apiTest(row) {
+      this.$emit('apiTest', row)
     }
   },
 }

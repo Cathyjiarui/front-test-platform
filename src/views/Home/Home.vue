@@ -365,7 +365,7 @@ export default {
             break;
         }
       } catch (e) {
-        console.log(`confirm`,e)
+        console.log(`confirm`, e)
       }
     },
     testEdit(row) {

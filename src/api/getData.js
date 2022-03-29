@@ -2,7 +2,6 @@
  * 获取相关数据方法整合
  */
 import axios from './config'
-import {toKey} from "core-js/internals/reflect-metadata";
 
 /**
  * 登录接口
